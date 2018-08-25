@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		30EB0203E4F0654E336CF071 /* Pods_WXCP_Flix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77C7F0D91D3D55C417D6E168 /* Pods_WXCP_Flix.framework */; };
 		B72E13772130BAA7000E1BE9 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72E13762130BAA7000E1BE9 /* MovieCell.swift */; };
+		B73263302131F5E900AE962F /* PosterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B732632F2131F5E900AE962F /* PosterCell.swift */; };
+		B7326332213200B500AE962F /* TrailerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7326331213200B500AE962F /* TrailerViewController.swift */; };
 		B7351D9C212F9BFA00365DCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7351D9B212F9BFA00365DCE /* AppDelegate.swift */; };
 		B7351DA1212F9BFA00365DCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7351D9F212F9BFA00365DCE /* Main.storyboard */; };
 		B7351DA3212F9BFB00365DCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7351DA2212F9BFB00365DCE /* Assets.xcassets */; };
@@ -18,7 +20,8 @@
 		B7351DCA212FA19E00365DCE /* NowPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7351DC9212FA19E00365DCE /* NowPlayingViewController.swift */; };
 		B74C1A4621312F36002FD272 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74C1A4521312F36002FD272 /* SettingsViewController.swift */; };
 		B7D798D921314A2700C1471D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D798D821314A2700C1471D /* SearchViewController.swift */; };
-		B7D798E121314B8200C1471D /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D798E021314B8200C1471D /* SearchCell.swift */; };
+		B7D798E72131E7CB00C1471D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D798E62131E7CB00C1471D /* DetailViewController.swift */; };
+		B7D798E92131F0A900C1471D /* SuperheroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D798E82131F0A900C1471D /* SuperheroViewController.swift */; };
 		D7412B148336434B1AF2DD5E /* Pods_WXCP_FlixUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F75AA8B9739690B4DBF57A11 /* Pods_WXCP_FlixUITests.framework */; };
 		D8201A938D9985697BD5834D /* Pods_WXCP_FlixTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3515F33BA340756759E52A98 /* Pods_WXCP_FlixTests.framework */; };
 /* End PBXBuildFile section */
@@ -49,6 +52,8 @@
 		77C7F0D91D3D55C417D6E168 /* Pods_WXCP_Flix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WXCP_Flix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78FEE2985484AB9098CD3D21 /* Pods-WXCP_FlixTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WXCP_FlixTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WXCP_FlixTests/Pods-WXCP_FlixTests.release.xcconfig"; sourceTree = "<group>"; };
 		B72E13762130BAA7000E1BE9 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		B732632F2131F5E900AE962F /* PosterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterCell.swift; sourceTree = "<group>"; };
+		B7326331213200B500AE962F /* TrailerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailerViewController.swift; sourceTree = "<group>"; };
 		B7351D98212F9BFA00365DCE /* WXCP_Flix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WXCP_Flix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7351D9B212F9BFA00365DCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B7351DA0212F9BFA00365DCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -64,7 +69,8 @@
 		B7351DC9212FA19E00365DCE /* NowPlayingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingViewController.swift; sourceTree = "<group>"; };
 		B74C1A4521312F36002FD272 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		B7D798D821314A2700C1471D /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		B7D798E021314B8200C1471D /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
+		B7D798E62131E7CB00C1471D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		B7D798E82131F0A900C1471D /* SuperheroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperheroViewController.swift; sourceTree = "<group>"; };
 		D5610349420EF8C9AFBCF44D /* Pods-WXCP_Flix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WXCP_Flix.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WXCP_Flix/Pods-WXCP_Flix.debug.xcconfig"; sourceTree = "<group>"; };
 		F75AA8B9739690B4DBF57A11 /* Pods_WXCP_FlixUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WXCP_FlixUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -122,16 +128,13 @@
 		B7351D9A212F9BFA00365DCE /* WXCP_Flix */ = {
 			isa = PBXGroup;
 			children = (
-				B7351DC9212FA19E00365DCE /* NowPlayingViewController.swift */,
+				B7D798E52131E77200C1471D /* Views */,
+				B7D798E42131E76400C1471D /* ViewControllers */,
 				B7351D9B212F9BFA00365DCE /* AppDelegate.swift */,
-				B72E13762130BAA7000E1BE9 /* MovieCell.swift */,
 				B7351D9F212F9BFA00365DCE /* Main.storyboard */,
 				B7351DA2212F9BFB00365DCE /* Assets.xcassets */,
 				B7351DA4212F9BFB00365DCE /* LaunchScreen.storyboard */,
 				B7351DA7212F9BFB00365DCE /* Info.plist */,
-				B74C1A4521312F36002FD272 /* SettingsViewController.swift */,
-				B7D798D821314A2700C1471D /* SearchViewController.swift */,
-				B7D798E021314B8200C1471D /* SearchCell.swift */,
 			);
 			path = WXCP_Flix;
 			sourceTree = "<group>";
@@ -152,6 +155,28 @@
 				B7351DBD212F9BFB00365DCE /* Info.plist */,
 			);
 			path = WXCP_FlixUITests;
+			sourceTree = "<group>";
+		};
+		B7D798E42131E76400C1471D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B7351DC9212FA19E00365DCE /* NowPlayingViewController.swift */,
+				B74C1A4521312F36002FD272 /* SettingsViewController.swift */,
+				B7D798D821314A2700C1471D /* SearchViewController.swift */,
+				B7D798E62131E7CB00C1471D /* DetailViewController.swift */,
+				B7D798E82131F0A900C1471D /* SuperheroViewController.swift */,
+				B7326331213200B500AE962F /* TrailerViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B7D798E52131E77200C1471D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B72E13762130BAA7000E1BE9 /* MovieCell.swift */,
+				B732632F2131F5E900AE962F /* PosterCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		DC7450E9B295DE6457A58A8E /* Frameworks */ = {
@@ -390,11 +415,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7D798D921314A2700C1471D /* SearchViewController.swift in Sources */,
-				B7D798E121314B8200C1471D /* SearchCell.swift in Sources */,
+				B73263302131F5E900AE962F /* PosterCell.swift in Sources */,
 				B7351DCA212FA19E00365DCE /* NowPlayingViewController.swift in Sources */,
 				B7351D9C212F9BFA00365DCE /* AppDelegate.swift in Sources */,
+				B7D798E92131F0A900C1471D /* SuperheroViewController.swift in Sources */,
 				B74C1A4621312F36002FD272 /* SettingsViewController.swift in Sources */,
 				B72E13772130BAA7000E1BE9 /* MovieCell.swift in Sources */,
+				B7D798E72131E7CB00C1471D /* DetailViewController.swift in Sources */,
+				B7326332213200B500AE962F /* TrailerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
