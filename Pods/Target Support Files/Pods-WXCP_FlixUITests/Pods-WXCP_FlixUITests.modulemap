@@ -1,0 +1,6 @@
+framework module Pods_WXCP_FlixUITests {
+  umbrella header "Pods-WXCP_FlixUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
