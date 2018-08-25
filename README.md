@@ -65,7 +65,6 @@ Since the video walkthroughs and the written tutorials have been published, XCod
     See the License for the specific language governing permissions and
     limitations under the License.
     
-<!---
 # Project 2 - WXCP_Flix
 
 WXCP_Flix is a movies app displaying box office and top rental DVDs using [The Movie Database API](http://docs.themoviedb.apiary.io/#).
@@ -101,7 +100,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/willthexu/WXCP_Flix/blob/master/gifs/details.gif' title='Video Walkthrough' width='225' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
@@ -124,7 +123,7 @@ Describe any challenges encountered while building the app.
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
-    
+<!---
 # Lab 3 - WXCP_Flix
 
 WXCP_Flix is a movies app displaying box office and top rental DVDs using [The Movie Database API](http://docs.themoviedb.apiary.io/#).
