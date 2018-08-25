@@ -35,11 +35,13 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://github.com/willthexu/WXCP_Flix/blob/master/gifs/basic.gif' title='Video Walkthrough' width='150' alt='Video Walkthrough' />
+<p float="left">
+<img src='https://github.com/willthexu/WXCP_Flix/blob/master/gifs/basic.gif' title='Video Walkthrough' width='225' alt='Video Walkthrough' />
 
-<img src='https://github.com/willthexu/WXCP_Flix/blob/master/gifs/search.gif' title='Video Walkthrough' width='150' alt='Video Walkthrough' />
+<img src='https://github.com/willthexu/WXCP_Flix/blob/master/gifs/search.gif' title='Video Walkthrough' width='225' alt='Video Walkthrough' />
 
-<img src='https://github.com/willthexu/WXCP_Flix/blob/master/gifs/extrasSmaller.gif' title='Video Walkthrough' width='150' alt='Video Walkthrough' />
+<img src='https://github.com/willthexu/WXCP_Flix/blob/master/gifs/extrasSmaller.gif' title='Video Walkthrough' width='225' alt='Video Walkthrough' />
+</p>
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
