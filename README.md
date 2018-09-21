@@ -156,7 +156,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://github.com/willthexu/WXCP_Flix/blob/master/gifs/withConstraints.gif' title='Video Walkthrough' width='500' alt='Video Walkthrough' />
+<img src='https://github.com/willthexu/WXCP_Flix/blob/master/gifs/withConstraints.gif' title='Video Walkthrough' width='600' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
@@ -179,7 +179,8 @@ Constraints are tricky.
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
-    
+
+<--
 # Lab 5 - WXCP_Flix
 
 WXCP_Flix is a movies app displaying box office and top rental DVDs using [The Movie Database API](http://docs.themoviedb.apiary.io/#).
@@ -231,3 +232,4 @@ Constraints are tricky.
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
+-->
