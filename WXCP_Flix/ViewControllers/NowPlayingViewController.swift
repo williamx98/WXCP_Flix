@@ -30,6 +30,8 @@ class NowPlayingViewController: UIViewController, UITableViewDelegate, UITableVi
         tableView.insertSubview(refreshControl, at: 0)
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 120
         self.centerRefreshIndicator.startAnimating()
         fetchMovies()
     }
