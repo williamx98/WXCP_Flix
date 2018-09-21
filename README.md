@@ -180,7 +180,7 @@ Constraints are tricky.
     See the License for the specific language governing permissions and
     limitations under the License.
 
-<--
+<!--
 # Lab 5 - WXCP_Flix
 
 WXCP_Flix is a movies app displaying box office and top rental DVDs using [The Movie Database API](http://docs.themoviedb.apiary.io/#).
