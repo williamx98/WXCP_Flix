@@ -16,11 +16,12 @@ class NowPlayingViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var centerRefreshIndicator: UIActivityIndicatorView!
     @IBOutlet weak var filterControl: UISegmentedControl!
     
-    var allMovies: [[String: Any]] = []
-    var movies: [[String: Any]] = []
+    var allMovies: [Movie] = []
+    var movies: [Movie] = []
     var refreshControl: UIRefreshControl!
     var favorites: [Int] = []
     var imagePosition: String = "left"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let defaults = UserDefaults.standard
@@ -47,13 +48,7 @@ class NowPlayingViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func fetchMovies() {
-        let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed")!
-        
-        let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 3)
-        let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
-        
-        let task = session.dataTask(with: request) { (data, response, error) in
-            // This will run when the network request returns
+        MovieApiManager().nowPlayingMovies { (movies: [Movie]?, error: Error?) in
             if let error = error {
                 print(error)
                 let alertController = UIAlertController(title: "Cannot Retrieve Movie Data", message: "Cannot connect to the internet", preferredStyle: .alert)
@@ -65,23 +60,14 @@ class NowPlayingViewController: UIViewController, UITableViewDelegate, UITableVi
                 }
                 alertController.addAction(tryAgainButton)
                 self.present(alertController, animated: true)
-            } else if let data = data {
-                let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
-                var movies = dataDictionary["results"] as! [[String: Any]]
-                self.allMovies = movies
-                if (self.filterControl.selectedSegmentIndex == 1) {
-                    movies = movies.filter {
-                        let movieId = $0["id"] as! Int
-                        return self.favorites.contains(movieId)
-                    }
-                }
+            } else if let movies = movies {
                 self.movies = movies
+                self.allMovies = self.movies
                 self.tableView.reloadData()
             }
             self.refreshControl.endRefreshing()
             self.centerRefreshIndicator.stopAnimating()
         }
-        task.resume();
     }
     
     @IBAction func filterChanged(_ sender: Any) {
@@ -89,7 +75,7 @@ class NowPlayingViewController: UIViewController, UITableViewDelegate, UITableVi
             self.movies = self.allMovies
         } else {
             self.movies = self.allMovies.filter {
-                let movieId = $0["id"] as! Int
+                let movieId = $0.id
                 return self.favorites.contains(movieId)
             }
         }
@@ -112,7 +98,7 @@ class NowPlayingViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let movie = movies[indexPath.row]
-        let movieId = movie["id"] as! Int
+        let movieId = movie.id
         
         let favorite = UITableViewRowAction(style: .normal, title: "Favorite") { action, index in
             self.favorites.append(movieId)
@@ -125,7 +111,7 @@ class NowPlayingViewController: UIViewController, UITableViewDelegate, UITableVi
             self.favorites.remove(at: index)
             if self.filterControl.selectedSegmentIndex == 1 {
                 self.movies = self.allMovies.filter {
-                    let movieId = $0["id"] as! Int
+                    let movieId = $0.id
                     return self.favorites.contains(movieId)
                 }
             }
@@ -149,26 +135,8 @@ class NowPlayingViewController: UIViewController, UITableViewDelegate, UITableVi
             identifer = "MovieCellRight"
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: identifer, for: indexPath) as! MovieCell
-        let movie = movies[indexPath.row]
-        let title = movie["title"] as! String
-        let overview = movie["overview"] as! String
-        cell.titleLabel.text = title
-        cell.overviewLabel.text = overview
-        let posterPathString = movie["poster_path"] as! String
-        let lowURLString = "https://image.tmdb.org/t/p/w45" + posterPathString
-        let highURLString = "https://image.tmdb.org/t/p/original" + posterPathString
+        cell.movie = movies[indexPath.row]
         
-        let smallImageRequest = URLRequest(url: URL(string: lowURLString)!)
-        let largeImageRequest = URLRequest(url: URL(string: highURLString)!)
-        let placeholderImage = UIImage(named: "AppIcon")!
-        
-    
-        
-        cell.posterImageView.af_setImage(withURLRequest: smallImageRequest, placeholderImage: placeholderImage, imageTransition: .crossDissolve(0.7), runImageTransitionIfCached: false, completion: {(success) -> Void in
-            let smallerImage = success.result.value ?? placeholderImage
-                cell.posterImageView.af_setImage(withURLRequest: largeImageRequest, placeholderImage: smallerImage, imageTransition: .crossDissolve(0.7), runImageTransitionIfCached: false)
-        })
-
         return cell
     }
     

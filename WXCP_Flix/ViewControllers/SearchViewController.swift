@@ -14,8 +14,8 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var allMovies: [[String: Any]] = []
-    var searchMatches: [[String: Any]] = []
+    var allMovies: [Movie] = []
+    var searchMatches: [Movie] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
@@ -32,29 +32,14 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PosterCell", for: indexPath) as! PosterCell
         let movie = self.searchMatches[indexPath.item]
-//        let title = movie["title"] as! String
-//        let overview = movie["overview"] as! String
-        let posterPathString = movie["poster_path"] as! String
-        let lowURLString = "https://image.tmdb.org/t/p/w45" + posterPathString
-        let highURLString = "https://image.tmdb.org/t/p/original" + posterPathString
-        
-        let smallImageRequest = URLRequest(url: URL(string: lowURLString)!)
-        let largeImageRequest = URLRequest(url: URL(string: highURLString)!)
-        let placeholderImage = UIImage(named: "AppIcon")!
-        
-        
-        
-        cell.posterImage.af_setImage(withURLRequest: smallImageRequest, placeholderImage: placeholderImage, imageTransition: .crossDissolve(0.7), runImageTransitionIfCached: false, completion: {(success) -> Void in
-            let smallerImage = success.result.value!
-            cell.posterImage.af_setImage(withURLRequest: largeImageRequest, placeholderImage: smallerImage, imageTransition: .crossDissolve(0.7), runImageTransitionIfCached: false)
-        })
+        cell.movie = movie
         return cell
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        self.searchMatches = searchText.isEmpty ? self.allMovies : self.allMovies.filter { (item: [String:Any]) -> Bool in
+        self.searchMatches = searchText.isEmpty ? self.allMovies : self.allMovies.filter { (item: Movie) -> Bool in
             // If dataItem matches the searchText, return true to include it
-            return (item["title"] as! String).range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+            return (item.title).range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
         }
         
         self.collectionView.reloadData()

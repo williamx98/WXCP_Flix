@@ -180,7 +180,7 @@ Constraints are tricky.
     See the License for the specific language governing permissions and
     limitations under the License.
 
-<!--
+
 # Lab 5 - WXCP_Flix
 
 WXCP_Flix is a movies app displaying box office and top rental DVDs using [The Movie Database API](http://docs.themoviedb.apiary.io/#).
@@ -191,31 +191,32 @@ Time spent: **X** hours spent in total
 
 The following **required** user stories are complete:
 
-- [ ] Create a movie model (+2pt)
-- [ ] Implement the movie model (+2pt)
-- [ ] Implement property observers (+2pt)
-- [ ] Create a basic API Client (+2pt)
+- [x] Create a movie model (+2pt)
+- [x] Implement the movie model (+2pt)
+- [x] Implement property observers (+2pt)
+- [x] Create a basic API Client (+2pt)
 
 The following **additional** user stories are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality! (+1-3pts)
+- [x] Get similar movies via detail page
+- [x] Scrollable textview for movies with long overviews
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.
-2.
+1. including other data from themovieDB
+2. more advanced search function
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-
+<img src='https://github.com/willthexu/WXCP_Flix/blob/master/gifs/done.gif' title='Video Walkthrough' width='600' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Constraints are tricky.
+This is something that should have been done at the beginning. 
 
 ## License
 
@@ -232,4 +233,4 @@ Constraints are tricky.
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
--->
+

@@ -11,18 +11,18 @@ import WebKit
 class TrailerViewController: UIViewController, WKUIDelegate{
 
     @IBOutlet weak var webView: WKWebView!
-    var movie: [String: Any]?
+    var movie: Movie?
     override func loadView() {
         let webConfig = WKWebViewConfiguration()
-        webView = WKWebView(frame: .zero, configuration: webConfig)
-        webView.uiDelegate = self
+        self.webView = WKWebView(frame: .zero, configuration: webConfig)
+        self.webView.uiDelegate = self
         view = webView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let movieId = String(movie!["id"] as! Int)
+        let movieId = String(movie!.id)
         let trailerURLURL = URL(string: "https://api.themoviedb.org/3/movie/" + movieId + "/videos?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed&language=en-US")!
         let request = URLRequest(url: trailerURLURL, cachePolicy: .returnCacheDataElseLoad , timeoutInterval: 3)
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
